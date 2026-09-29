@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>श्री Cab | Premium Taxi Service in Bihar</title>
+    
+    <!-- Google Fonts for a Modern Look -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #facc15; /* Premium Yellow/Gold */
+            --primary-hover: #eab308;
+            --dark-bg: #0f172a;
+            --light-bg: #f8fafc;
+            --text-dark: #1e293b;
+            --text-light: #f1f5f9;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            background-color: var(--dark-bg);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .logo {
+            color: var(--primary-color);
+            font-size: 28px;
+            font-weight: 700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-top {
+            display: flex;
+            gap: 20px;
+        }
+
+        .contact-top a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .contact-top a:hover {
+            color: var(--primary-color);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 85vh;
+            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.9)), 
+                        url('https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=2070&auto=format&fit=crop') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            font-weight: 300;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            background-color: var(--primary-color);
+            color: var(--dark-bg);
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(250, 204, 21, 0.4);
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(250, 204, 21, 0.6);
+        }
+
+        /* --- Global Section Styles --- */
+        section {
+            padding: 80px 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--dark-bg);
+            font-weight: 700;
+        }
+
+        .section-title span {
+            color: var(--primary-color);
+        }
+
+        /* --- Fleet Section (Proper Images) --- */
+        .fleet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        .fleet-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: var(--transition);
+        }
+
+        .fleet-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+
+        .fleet-img-container {
+            height: 220px;
+            width: 100%;
+            overflow: hidden;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 4px solid var(--primary-color);
+        }
+
+        .fleet-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .fleet-info {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .fleet-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--dark-bg);
+        }
+
+        .fleet-info p {
+            color: #64748b;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        /* --- Booking Form Section --- */
+        .booking-section {
+            background-color: var(--dark-bg);
+            color: var(--white);
+        }
+
+        .booking-section .section-title {
+            color: var(--white);
+        }
+
+        .booking-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .input-group input, 
+        .input-group select {
+            padding: 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: var(--light-bg);
+        }
+
+        .input-group input:focus, 
+        .input-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.2);
+            background: var(--white);
+        }
+
+        .submit-btn {
+            grid-column: span 2;
+            margin-top: 10px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* --- Reviews Section --- */
+        .reviews-section {
+            background-color: var(--light-bg);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .review-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .stars {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .review-text {
+            font-style: italic;
+            color: #475569;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .reviewer {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .reviewer-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: var(--dark-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .reviewer-info h4 {
+            color: var(--dark-bg);
+            margin: 0;
+        }
+
+        .reviewer-info p {
+            color: #94a3b8;
+            font-size: 0.85rem;
+            margin: 0;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #020617;
+            color: var(--white);
+            padding: 60px 5% 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .footer-col p, .footer-col a {
+            color: #cbd5e1;
+            text-decoration: none;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .map-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color) !important;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: var(--transition);
+            margin-top: 10px;
+        }
+
+        .map-btn:hover {
+            background: var(--primary-color);
+            color: var(--dark-bg) !important;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #334155;
+            padding-top: 20px;
+            color: #64748b;
+        }
+
+        /* --- Floating WhatsApp Button --- */
+        .whatsapp-fab {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 35px;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .whatsapp-fab:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .submit-btn {
+                grid-column: span 1;
+            }
+            .contact-top {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo">
+            <i class="fa-solid fa-taxi"></i> श्री Cab
+        </a>
+        <div class="contact-top">
+            <a href="tel:+919942001355"><i class="fa-solid fa-phone"></i> +91 9942001355</a>
+            <a href="mailto:shreecab1355@gmail.com"><i class="fa-solid fa-envelope"></i> shreecab1355@gmail.com</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>श्री Cab</h1>
+        <p>Your Most Trusted & Premium Taxi Partner Operating Across All Major Districts of Bihar.</p>
+        <a href="#book-ride" class="btn">Book Your Ride Now</a>
+    </section>
+
+    <!-- Fleet Section -->
+    <section id="fleet">
+        <h2 class="section-title">Our Premium <span>Fleet</span></h2>
+        <div class="fleet-grid">
+            <!-- Dzire -->
+            <div class="fleet-card">
+                <div class="fleet-img-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/2017_Maruti_Suzuki_Dzire_ZDi_AGS_front_11.19.17.jpg/800px-2017_Maruti_Suzuki_Dzire_ZDi_AGS_front_11.19.17.jpg" alt="Swift Dzire" class="fleet-img">
+                </div>
+                <div class="fleet-info">
+                    <h3>Swift Dzire</h3>
+                    <p>Comfortable 4-Seater Sedan. Perfect for city tours, corporate travel, and small families.</p>
+                    <div style="color: var(--primary-color); font-weight: 600;">AC • 4 Seats • 2 Bags</div>
+                </div>
+            </div>
+
+            <!-- Ertiga -->
+            <div class="fleet-card">
+                <div class="fleet-img-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/2018_Suzuki_Ertiga_GL_front_2.02.19.jpg/800px-2018_Suzuki_Ertiga_GL_front_2.02.19.jpg" alt="Maruti Ertiga" class="fleet-img">
+                </div>
+                <div class="fleet-info">
+                    <h3>Maruti Ertiga</h3>
+                    <p>Spacious 6-Seater SUV. Highly recommended for outstation trips and group travels.</p>
+                    <div style="color: var(--primary-color); font-weight: 600;">AC • 6 Seats • 4 Bags</div>
+                </div>
+            </div>
+
+            <!-- Innova Crysta -->
+            <div class="fleet-card">
+                <div class="fleet-img-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/2016_Toyota_Innova_2.0_G_wagon_%28TGN140R%3B_02102017%29%2C_South_Tangerang.jpg/800px-2016_Toyota_Innova_2.0_G_wagon_%28TGN140R%3B_02102017%29%2C_South_Tangerang.jpg" alt="Innova Crysta" class="fleet-img">
+                </div>
+                <div class="fleet-info">
+                    <h3>Innova Crysta</h3>
+                    <p>Premium 7-Seater Luxury SUV. Experience unmatched comfort for long-distance journeys across Bihar.</p>
+                    <div style="color: var(--primary-color); font-weight: 600;">AC • 7 Seats • 5 Bags</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section id="book-ride" class="booking-section">
+        <h2 class="section-title">Request A <span>Booking</span></h2>
+        <div class="booking-container">
+            <form id="whatsappForm">
+                <div class="form-grid">
+                    
+                    <div class="input-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="mobile">Mobile Number</label>
+                        <input type="tel" id="mobile" placeholder="10-digit number" pattern="[0-9]{10}" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="pickup">Pickup Location</label>
+                        <input type="text" id="pickup" placeholder="E.g., Patna Railway Station" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="drop">Drop Location</label>
+                        <input type="text" id="drop" placeholder="E.g., Muzaffarpur" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="date">Date of Travel</label>
+                        <input type="date" id="date" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="time">Time of Journey</label>
+                        <input type="time" id="time" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="cabType">Cab Type Required</label>
+                        <select id="cabType" required>
+                            <option value="" disabled selected>Select Vehicle</option>
+                            <option value="Swift Dzire">Swift Dzire (Sedan)</option>
+                            <option value="Maruti Ertiga">Maruti Ertiga (SUV)</option>
+                            <option value="Innova Crysta">Innova Crysta (Premium SUV)</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="tripType">Trip Type</label>
+                        <select id="tripType" required>
+                            <option value="" disabled selected>Select Trip Type</option>
+                            <option value="One Way Drop">One Way Drop</option>
+                            <option value="Round Trip">Round Trip</option>
+                            <option value="Local Sightseeing">Local Sightseeing / Rental</option>
+                            <option value="Airport Transfer">Airport Transfer</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn submit-btn">
+                        <i class="fa-brands fa-whatsapp" style="font-size: 1.5rem;"></i> Send Booking Request via WhatsApp
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+        <h2 class="section-title">What Our <span>Customers Say</span></h2>
+        <div class="reviews-grid">
+            
+            <div class="review-card">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="review-text">"Booked an Innova Crysta for a family function from Patna to Gaya. The driver arrived on time, the car was spotless, and the driving was very safe. Highly recommend श्री Cab!"</p>
+                <div class="reviewer">
+                    <div class="reviewer-avatar">R</div>
+                    <div class="reviewer-info">
+                        <h4>Rajesh Kumar</h4>
+                        <p>Traveled in Innova Crysta</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="review-text">"Very professional service. The WhatsApp booking process is incredibly easy. Got a Swift Dzire for my business trip in Bihar. Transparent pricing and polite driver."</p>
+                <div class="reviewer">
+                    <div class="reviewer-avatar">A</div>
+                    <div class="reviewer-info">
+                        <h4>Anjali Sharma</h4>
+                        <p>Traveled in Swift Dzire</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <p class="review-text">"Used the Ertiga for a group trip with friends to Darbhanga. Spacious vehicle and the AC was chilling perfectly. Definitely my go-to cab service in Bihar now."</p>
+                <div class="reviewer">
+                    <div class="reviewer-avatar">S</div>
+                    <div class="reviewer-info">
+                        <h4>Sumit Singh</h4>
+                        <p>Traveled in Maruti Ertiga</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>श्री Cab</h3>
+                <p>Bihar's most reliable and premium taxi service. Offering well-maintained cars and professional drivers for all your travel needs.</p>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Contact Details</h3>
+                <p><i class="fa-solid fa-phone"></i> +91 9942001355</p>
+                <p><i class="fa-solid fa-envelope"></i> shreecab1355@gmail.com</p>
+                <p><i class="fa-solid fa-clock"></i> 24/7 Service Available</p>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Locate Us</h3>
+                <p>Head Office, Bihar.</p>
+                <a href="https://maps.app.goo.gl/dvG5s7bAzvGoJtuJA?g_st=ac" target="_blank" class="map-btn">
+                    <i class="fa-solid fa-location-dot"></i> View on Google Maps
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 श्री Cab. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Action Button -->
+    <a href="https://wa.me/919942001355" target="_blank" class="whatsapp-fab" title="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript for WhatsApp Redirection -->
+    <script>
+        document.getElementById('whatsappForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevents default form submission
+
+            // Capture data from the form fields
+            const name = document.getElementById('name').value;
+            const mobile = document.getElementById('mobile').value;
+            const pickup = document.getElementById('pickup').value;
+            const drop = document.getElementById('drop').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const cabType = document.getElementById('cabType').value;
+            const tripType = document.getElementById('tripType').value;
+
+            // Construct the WhatsApp text (using %0A for line breaks)
+            let whatsappMsg = `*🚕 New Booking Request - श्री Cab*%0A%0A`;
+            whatsappMsg += `*👤 Name:* ${name}%0A`;
+            whatsappMsg += `*📞 Mobile:* ${mobile}%0A`;
+            whatsappMsg += `*📍 Pickup Location:* ${pickup}%0A`;
+            whatsappMsg += `*🏁 Drop Location:* ${drop}%0A`;
+            whatsappMsg += `*📅 Date of Travel:* ${date}%0A`;
+            whatsappMsg += `*⏰ Time of Journey:* ${time}%0A`;
+            whatsappMsg += `*🚘 Cab Type:* ${cabType}%0A`;
+            whatsappMsg += `*🔄 Trip Type:* ${tripType}%0A%0A`;
+            whatsappMsg += `_Please confirm my booking._`;
+
+            // Open WhatsApp link
+            const whatsappLink = `https://wa.me/919942001355?text=${whatsappMsg}`;
+            window.open(whatsappLink, '_blank');
+        });
+    </script>
+</body>
+</html>
